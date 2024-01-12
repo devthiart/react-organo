@@ -5,24 +5,28 @@ import Button from '../Button';
 import { useState } from 'react';
 
 const Form = (props) => {
-  const teams = [
-    'Programação',
-    'Front-End',
-    'Data Science',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão'
-  ]
 
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [team, setTeam] = useState(teams[0]);
+  const [team, setTeam] = useState(props.teamsName[0]);
 
   const submitForm = (event) => {
     event.preventDefault();
-    props.onRegisteredEmployee({name, role, imageUrl, team})
+    props.onRegisteredEmployee({
+      name, 
+      role, 
+      imageUrl, 
+      team
+    });
+    clearForm();
+  }
+
+  const clearForm = () => {
+    setName('');
+    setImageUrl('');
+    setRole('');
+    setTeam(props.teamsName[0]);
   }
 
   return (
@@ -51,7 +55,7 @@ const Form = (props) => {
         />
         <DropdownList 
           label="Time" 
-          items={teams} 
+          items={props.teamsName} 
           value={team}
           onChange={value => setTeam(value)}
           isRequired={true}
