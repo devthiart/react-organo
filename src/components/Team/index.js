@@ -18,6 +18,7 @@ const Team = (props) => {
               name={employee.name}
               role={employee.role}
               imageUrl={employee.imageUrl}
+              backgroundColor={props.primaryColor}
             />
           ))
         }

@@ -26,7 +26,7 @@ const Form = (props) => {
     setName('');
     setImageUrl('');
     setRole('');
-    setTeam(props.teamsName[0]);
+    setTeam('');
   }
 
   return (

@@ -1,9 +1,9 @@
 import './Employee.css';
 
-const Employee = ({ name, imageUrl, role }) => {
+const Employee = ({ name, imageUrl, role, backgroundColor }) => {
   return (
     <div className='employee'>
-      <div className='header'>
+      <div className='header' style={{backgroundColor: backgroundColor}}>
         <img src={imageUrl} alt={`Foto de ${name}`} />
       </div>
       <div className='footer'>

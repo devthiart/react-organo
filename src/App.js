@@ -54,9 +54,8 @@ function App() {
   const [employees, setEmployees] = useState([]);
 
   const onNewEmployeeAdded = (employee) => {
-    console.log("Employee: ", employee);
+    // debugger // Stop execution in the Google Chrome.
     setEmployees([...employees, employee]);
-    console.log("Employee List: ", employees);
   }
 
   return (
